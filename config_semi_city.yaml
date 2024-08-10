@@ -78,7 +78,7 @@ net: # Required.
   sync_bn: True
   ema_decay: 0.996
   encoder:
-    type: dppf.models.resnet.resnet101
+    type: dppd.models.resnet.resnet101
     pretrain: ./pretrained/resnet101.pth
     kwargs:
       zero_init_residual: True
@@ -86,7 +86,7 @@ net: # Required.
       replace_stride_with_dilation: [False, False, True]  # [output_stride = 16]
       # replace_stride_with_dilation: [False, True, True]  # [output_stride = 8]
   decoder:
-    type: dppf.models.decoder_experiment.dec_deeplabv3_plus
+    type: dppd.models.decoder_experiment.dec_deeplabv3_plus
     kwargs:
       inner_planes: 256
       low_conv_planes: 48
